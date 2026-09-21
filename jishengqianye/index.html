@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="寄生前夜3官方网站，提供寄生前夜3游戏背景介绍、角色图鉴、世界观设定、玩法攻略及下载资源。深入解析游戏中的N.E.R.O.系统与剧情分支。">
+    <meta name="keywords" content="寄生前夜3,寄生前夜3攻略,寄生前夜3下载,寄生前夜3剧情,寄生前夜3角色">
+    <title>寄生前夜3-游戏背景、角色图鉴与攻略指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #e74c3c;
+            --text-color: #333;
+            --light-bg: #f8f9fa;
+            --border-color: #dee2e6;
+            --card-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: #fff;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header & Nav */
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            font-size: 0.95rem;
+            transition: opacity 0.3s;
+        }
+
+        nav a:hover {
+            opacity: 0.8;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), url('https://picsum.photos/seed/parasite/1600/900') center/cover;
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            opacity: 0.9;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .cta-btn:hover {
+            background-color: #c0392b;
+        }
+
+        /* Main Content Grid */
+        .content-wrapper {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+            padding: 40px 0;
+        }
+
+        /* Section Styling */
+        section {
+            margin-bottom: 50px;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            border-left: 5px solid var(--accent-color);
+            padding-left: 15px;
+            margin-bottom: 25px;
+            color: var(--primary-color);
+        }
+
+        /* Game Info Cards */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .info-card {
+            background: var(--light-bg);
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        .info-card h3 {
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        /* Character List */
+        .char-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .char-item {
+            display: flex;
+            align-items: center;
+            background: #f1f2f6;
+            padding: 10px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            transition: transform 0.2s;
+        }
+
+        .char-item:hover {
+            transform: translateY(-2px);
+            background: #e1e2e6;
+        }
+
+        .char-avatar {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            margin-right: 10px;
+            object-fit: cover;
+        }
+
+        /* Sidebar */
+        aside {
+            background: var(--light-bg);
+            padding: 20px;
+            border-radius: 8px;
+            height: fit-content;
+        }
+
+        .sidebar-box {
+            margin-bottom: 30px;
+        }
+
+        .sidebar-box h4 {
+            margin-bottom: 15px;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 5px;
+        }
+
+        .sidebar-list li {
+            margin-bottom: 10px;
+            border-bottom: 1px dashed var(--border-color);
+            padding-bottom: 5px;
+        }
+
+        .sidebar-list a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Guide Tabs */
+        .guide-tabs {
+            display: flex;
+            border-bottom: 2px solid var(--border-color);
+            margin-bottom: 20px;
+        }
+
+        .tab-btn {
+            padding: 10px 20px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            font-size: 1rem;
+            color: #666;
+            border-bottom: 3px solid transparent;
+            margin-bottom: -2px;
+        }
+
+        .tab-btn.active {
+            color: var(--primary-color);
+            border-bottom-color: var(--accent-color);
+            font-weight: bold;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .guide-article h3 {
+            margin: 20px 0 10px;
+            font-size: 1.2rem;
+        }
+
+        .guide-article p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .guide-article ul {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        .guide-article li {
+            margin-bottom: 5px;
+        }
+
+        /* FAQ */
+        .faq-item {
+            border-bottom: 1px solid var(--border-color);
+            padding: 15px 0;
+        }
+
+        .faq-question {
+            font-weight: bold;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .faq-answer {
+            margin-top: 10px;
+            color: #666;
+            font-size: 0.95rem;
+            display: none;
+        }
+
+        .faq-item.open .faq-answer {
+            display: block;
+        }
+
+        .faq-item.open .faq-question::after {
+            content: '-';
+        }
+
+        .faq-question::after {
+            content: '+';
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: #bdc3c7;
+            padding: 40px 0 20px;
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        .footer-links {
+            margin-bottom: 20px;
+        }
+
+        .footer-links a {
+            margin: 0 10px;
+            font-size: 0.9rem;
+        }
+
+        .copyright {
+            font-size: 0.8rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .content-wrapper {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            nav ul {
+                display: none; /* Simplified for mobile */
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container header-inner">
+        <div class="logo">寄生<span>前夜3</span></div>
+        <nav>
+            <ul>
+                <li><a href="#game-info">游戏资讯</a></li>
+                <li><a href="#characters">角色图鉴</a></li>
+                <li><a href="#guide">玩法攻略</a></li>
+                <li><a href="#faq">常见问题</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<div class="hero">
+    <div class="container">
+        <h1>寄生前夜3</h1>
+        <p>探索未知的N.E.R.O.世界，揭开人类与寄生生物之间错综复杂的命运篇章。全新的战斗系统与深度剧情体验。</p>
+        <a href="#guide" class="cta-btn">开始探索</a>
+    </div>
+</div>
+
+<main class="container content-wrapper">
+
+    <!-- Left Column: Content -->
+    <div class="main-column">
+        
+        <!-- Game Info Section -->
+        <section id="game-info">
+            <h2 class="section-title">游戏概览</h2>
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>游戏背景</h3>
+                    <p>故事发生在《寄生前夜》世界观之后，人类科技飞速发展，但一种名为N.E.R.O.的寄生生物悄然出现，威胁着全球安全。</p>
+                </div>
+                <div class="info-card">
+                    <h3>核心玩法</h3>
+                    <p>结合了战术射击与潜行解谜。玩家需要利用环境优势，与队友配合，对抗高智能的寄生体。</p>
+                </div>
+                <div class="info-card">
+                    <h3>平台支持</h3>
+                    <p>支持PC、PlayStation 5及Xbox Series X|S平台，支持4K分辨率与光追特效。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Characters Section -->
+        <section id="characters">
+            <h2 class="section-title">主要角色</h2>
+            <div class="char-list">
+                <div class="char-item">
+                    <img src="https://picsum.photos/seed/char1/50/50" alt="Avatar" class="char-avatar">
+                    <span>凯特·布莱克</span>
+                </div>
+                <div class="char-item">
+                    <img src="https://picsum.photos/seed/char2/50/50" alt="Avatar" class="char-avatar">
+                    <span>里昂·福克斯</span>
+                </div>
+                <div class="char-item">
+                    <img src="https://picsum.photos/seed/char3/50/50" alt="Avatar" class="char-avatar">
+                    <span>艾琳娜·沃森</span>
+                </div>
+                <div class="char-item">
+                    <img src="https://picsum.photos/seed/char4/50/50" alt="Avatar" class="char-avatar">
+                    <span>指挥官·陈</span>
+                </div>
+                <div class="char-item">
+                    <img src="https://picsum.photos/seed/char5/50/50" alt="Avatar" class="char-avatar">
+                    <span>代号：零</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Guide Section -->
+        <section id="guide">
+            <h2 class="section-title">深度攻略</h2>
+            
+            <div class="guide-tabs">
+                <button class="tab-btn active" onclick="openTab(event, 'combat')">战斗技巧</button>
+                <button class="tab-btn" onclick="openTab(event, 'story')">剧情解析</button>
+                <button class="tab-btn" onclick="openTab(event, 'weapons')">武器装备</button>
+            </div>
+
+            <div id="combat" class="tab-content active">
+                <article class="guide-article">
+                    <h3>N.E.R.O.战斗机制解析</h3>
+                    <p>在寄生前夜3中，面对N.E.R.O.寄生体，单纯的火力压制往往无效。了解其攻击模式是生存的关键。</p>
+                    <ul>
+                        <li><strong>弱点识别：</strong> 大多数高阶寄生体在受到激光扫描后，其外骨骼会短暂透明化，暴露内部核心。</li>
+                        <li><strong>环境利用：</strong> 利用场景中的酸性气体或高压电场可以造成范围伤害，间接削弱敌人。</li>
+                        <li><strong>团队配合：</strong> 治疗师职业需要时刻关注队友的红色血条，及时释放纳米修复剂。</li>
+                    </ul>
+                </article>
+            </div>
+
+            <div id="story" class="tab-content">
+                <article class="guide-article">
+                    <h3>隐藏结局触发条件</h3>
+                    <p>游戏共有三种主要结局，其中“救赎”结局需要满足特定条件：</p>
+                    <ul>
+                        <li>在序章中救下艾琳娜。</li>
+                        <li>在第三章拒绝指挥官的撤离命令。</li>
+                        <li>在最终Boss战中，保留至少50%的队友生命值。</li>
+                    </ul>
+                </article>
+            </div>
+
+            <div id="weapons" class="tab-content">
+                <article class="guide-article">
+                    <h3>推荐武器搭配</h3>
+                    <p>针对不同类型的N.E.R.O.个体，装备选择至关重要。</p>
+                    <ul>
+                        <li><strong>轻型单位：</strong> 使用高频振动刀，追求爆发伤害与机动性。</li>
+                        <li><strong>重型单位：</strong> 搭配重型电磁炮与盾牌，采用阵地战打法。</li>
+                        <li><strong>飞行单位：</strong> 必须装备反重力导弹，普通子弹无法击穿其护盾。</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq">
+            <h2 class="section-title">常见问题 (FAQ)</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">游戏支持多人联机吗？</div>
+                <div class="faq-answer">是的，寄生前夜3支持2-4人合作模式，玩家可以共同完成任务并解锁专属装备。</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">游戏需要联网吗？</div>
+                <div class="faq-answer">单人战役必须联网验证，但联机模式可离线游玩。</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">N.E.R.O.病毒会传染给玩家吗？</div>
+                <div class="faq-answer">在游戏设定的未来医学下，经过严格筛查的特工接种了抑制疫苗，理论上不会被感染。</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">有哪些DLC内容？</div>
+                <div class="faq-answer">目前已发售“深潜者”资料片，新增了水下关卡与潜水员专属装备。</div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Right Column: Sidebar -->
+    <aside>
+        <div class="sidebar-box">
+            <h4>快速导航</h4>
+            <ul class="sidebar-list">
+                <li><a href="#">新手入门指南</a></li>
+                <li><a href="#">全地图宝箱位置</a></li>
+                <li><a href="#">武器锻造公式</a></li>
+                <li><a href="#">角色好感度系统</a></li>
+                <li><a href="#">配置需求一览</a></li>
+            </ul>
+        </div>
+
+        <div class="sidebar-box">
+            <h4>热门下载</h4>
+            <ul class="sidebar-list">
+                <li><a href="#">游戏本体 v1.02</a></li>
+                <li><a href="#">最新补丁包</a></li>
+                <li><a href="#">高清角色立绘包</a></li>
+            </ul>
+        </div>
+
+        <div class="sidebar-box">
+            <h4>社区活动</h4>
+            <p style="font-size: 0.9rem; color: #666; margin-bottom: 10px;">参与“寄生前夜3”同人创作大赛，赢取限定实体手办。</p>
+            <a href="#" style="font-size: 0.85rem; color: var(--accent-color);">查看详情 &rarr;</a>
+        </div>
+    </aside>
+
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-links">
+            <a href="#">关于我们</a>
+            <a href="#">免责声明</a>
+            <a href="#">联系合作</a>
+            <a href="#">隐私政策</a>
+        </div>
+        <p class="copyright">&copy; 2023 寄生前夜3攻略站 版权所有. 本站为非官方网站，内容仅供学习交流。</p>
+    </div>
+</footer>
+
+<script>
+    // Tab Switching Logic
+    function openTab(evt, tabName) {
+        var i, tabContent, tabBtn;
+        tabContent = document.getElementsByClassName("tab-content");
+        for (i = 0; i < tabContent.length; i++) {
+            tabContent[i].classList.remove("active");
+        }
+        tabBtn = document.getElementsByClassName("tab-btn");
+        for (i = 0; i < tabBtn.length; i++) {
+            tabBtn[i].classList.remove("active");
+        }
+        document.getElementById(tabName).classList.add("active");
+        evt.currentTarget.classList.add("active");
+    }
+
+    // FAQ Accordion Logic
+    const faqItems = document.querySelectorAll('.faq-item');
+    faqItems.forEach(item => {
+        item.querySelector('.faq-question').addEventListener('click', () => {
+            item.classList.toggle('open');
+        });
+    });
+</script>
+
+</body>
+</html>

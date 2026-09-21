@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="情侣装图片精选，提供时尚情侣穿搭灵感、情侣装搭配技巧及情侣写真拍摄指南，发现最适合你们的情侣装风格。">
+    <meta name="keywords" content="好看的情侣装图片,情侣装搭配,情侣写真,情侣穿搭,时尚情侣">
+    <title>好看的情侣装图片-情侣穿搭灵感与风格搭配指南</title>
+    <style>
+        :root {
+            --primary-color: #ff6b81;
+            --secondary-color: #ff4757;
+            --accent-color: #2ed573;
+            --bg-color: #f7f9fc;
+            --card-bg: #ffffff;
+            --text-main: #2f3542;
+            --text-sub: #747d8c;
+            --border-radius: 12px;
+            --shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* 布局容器 */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--secondary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-main);
+            font-size: 16px;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        .search-btn {
+            background: var(--bg-color);
+            padding: 8px 16px;
+            border-radius: 20px;
+            color: var(--text-main);
+            font-size: 14px;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #fff0f3 0%, #ffe3e6 100%);
+            padding: 60px 0;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 16px;
+            color: var(--text-main);
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: var(--text-sub);
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+
+        .hero-tags {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            color: var(--text-main);
+            border: 1px solid rgba(0,0,0,0.05);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .tag:hover {
+            background: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+
+        /* Section Styles */
+        section {
+            margin-bottom: 60px;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 24px;
+        }
+
+        .section-title {
+            font-size: 24px;
+            font-weight: 700;
+            position: relative;
+            padding-left: 16px;
+        }
+
+        .section-title::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 5px;
+            height: 24px;
+            background-color: var(--primary-color);
+            border-radius: 2px;
+        }
+
+        .more-link {
+            font-size: 14px;
+            color: var(--text-sub);
+        }
+
+        .more-link:hover {
+            color: var(--primary-color);
+        }
+
+        /* Grid Layout */
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        /* Card Styles */
+        .card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-image-wrapper {
+            position: relative;
+            padding-top: 133%; /* 3:4 Aspect Ratio */
+            background-color: #eee;
+        }
+
+        .card-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .card:hover .card-image {
+            transform: scale(1.05);
+        }
+
+        .card-tag {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background: rgba(0, 0, 0, 0.6);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            backdrop-filter: blur(4px);
+        }
+
+        .card-content {
+            padding: 16px;
+        }
+
+        .card-title {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .card-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 13px;
+            color: var(--text-sub);
+        }
+
+        /* Feature Card (Wide) */
+        .feature-card {
+            grid-column: span 2;
+            display: flex;
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .feature-image {
+            width: 50%;
+            object-fit: cover;
+        }
+
+        .feature-content {
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .feature-content h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .feature-content p {
+            color: var(--text-sub);
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 8px 20px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 500;
+            width: fit-content;
+        }
+
+        .btn:hover {
+            background-color: var(--secondary-color);
+        }
+
+        /* Guide Section */
+        .guide-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .guide-item {
+            display: flex;
+            align-items: center;
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            gap: 20px;
+        }
+
+        .guide-icon {
+            width: 50px;
+            height: 50px;
+            background: #fff0f3;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-color);
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+
+        .guide-text h4 {
+            font-size: 16px;
+            margin-bottom: 4px;
+        }
+
+        .guide-text p {
+            font-size: 14px;
+            color: var(--text-sub);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #fff;
+            padding: 60px 0 30px;
+            border-top: 1px solid #eee;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand h2 {
+            font-size: 20px;
+            margin-bottom: 16px;
+            color: var(--text-main);
+        }
+
+        .footer-brand p {
+            color: var(--text-sub);
+            font-size: 14px;
+            max-width: 300px;
+        }
+
+        .footer-col h4 {
+            font-size: 16px;
+            margin-bottom: 20px;
+            color: var(--text-main);
+        }
+
+        .footer-col ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-col a {
+            color: var(--text-sub);
+            font-size: 14px;
+        }
+
+        .footer-col a:hover {
+            color: var(--primary-color);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid #f1f1f1;
+            color: #b2bec3;
+            font-size: 13px;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .grid-4 {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            .feature-card {
+                grid-column: span 2;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-wrapper {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+                gap: 15px;
+            }
+            nav ul {
+                gap: 15px;
+                font-size: 14px;
+            }
+            .hero h1 {
+                font-size: 32px;
+            }
+            .grid-4, .grid-3 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .feature-card {
+                grid-column: span 1;
+                flex-direction: column;
+            }
+            .feature-image {
+                width: 100%;
+                height: 200px;
+            }
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .grid-4, .grid-3 {
+                grid-template-columns: 1fr;
+            }
+            .hero h1 {
+                font-size: 26px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                <span>情侣穿搭图鉴</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#">风格分类</a></li>
+                    <li><a href="#">搭配指南</a></li>
+                    <li><a href="#">写真灵感</a></li>
+                </ul>
+            </nav>
+            <button class="search-btn">搜索图片</button>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>好看的情侣装图片，记录你们的甜蜜瞬间</h1>
+                <p>探索最时尚的情侣穿搭灵感，从甜美可爱到高级简约，发现最适合你们的情侣装风格，让每一次出街都成为风景。</p>
+                <div class="hero-tags">
+                    <span class="tag">甜美日系</span>
+                    <span class="tag">高级感极简</span>
+                    <span class="tag">复古港风</span>
+                    <span class="tag">街头潮酷</span>
+                    <span class="tag">民族风</span>
+                    <span class="tag">亲子装</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="container">
+            <div class="section-header">
+                <h2 class="section-title">本周热门搭配</h2>
+                <a href="#" class="more-link">查看更多 &rarr;</a>
+            </div>
+            <div class="grid-4">
+                <article class="card">
+                    <div class="card-image-wrapper">
+                        <span class="card-tag">甜美风</span>
+                        <img src="https://picsum.photos/seed/love1/400/533" alt="情侣装图片" class="card-image">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">粉色系樱花情侣装搭配</h3>
+                        <div class="card-meta">
+                            <span>3.2w 浏览</span>
+                            <span>2023-10-24</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-image-wrapper">
+                        <span class="card-tag">高级灰</span>
+                        <img src="https://picsum.photos/seed/love2/400/533" alt="情侣装图片" class="card-image">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">极简黑白高级感穿搭</h3>
+                        <div class="card-meta">
+                            <span>2.8w 浏览</span>
+                            <span>2023-10-23</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-image-wrapper">
+                        <span class="card-tag">复古风</span>
+                        <img src="https://picsum.photos/seed/love3/400/533" alt="情侣装图片" class="card-image">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">80年代复古港风情侣照</h3>
+                        <div class="card-meta">
+                            <span>1.5w 浏览</span>
+                            <span>2023-10-22</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-image-wrapper">
+                        <span class="card-tag">运动风</span>
+                        <img src="https://picsum.photos/seed/love4/400/533" alt="情侣装图片" class="card-image">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">舒适运动休闲情侣装</h3>
+                        <div class="card-meta">
+                            <span>1.2w 浏览</span>
+                            <span>2023-10-21</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="container">
+            <div class="section-header">
+                <h2 class="section-title">精选搭配指南</h2>
+            </div>
+            <div class="grid-3">
+                <article class="card feature-card">
+                    <img src="https://picsum.photos/seed/guide1/800/600" alt="情侣装搭配技巧" class="feature-image">
+                    <div class="feature-content">
+                        <h3>如何选择适合肤色的情侣装颜色？</h3>
+                        <p>掌握色彩搭配的基本原理，了解冷暖色调的区分，让你们的情侣装在视觉上更加和谐统一。</p>
+                        <a href="#" class="btn">阅读指南</a>
+                    </div>
+                </article>
+
+                <article class="card feature-card">
+                    <img src="https://picsum.photos/seed/guide2/800/600" alt="情侣装拍照技巧" class="feature-image">
+                    <div class="feature-content">
+                        <h3>情侣写真拍摄姿势与构图技巧</h3>
+                        <p>不仅仅是穿得好看，学会正确的拍照姿势和构图方法，拍出更有质感的情侣大片。</p>
+                        <a href="#" class="btn">学习技巧</a>
+                    </div>
+                </article>
+
+                <article class="card feature-card">
+                    <img src="https://picsum.photos/seed/guide3/800/600" alt="情侣装风格分类" class="feature-image">
+                    <div class="feature-content">
+                        <h3>从甜美到酷飒：情侣装风格全解析</h3>
+                        <p>详细解析日系、韩系、欧美、复古等多种风格特点，帮助你们找到最契合彼此的气质风格。</p>
+                        <a href="#" class="btn">查看风格</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="container">
+            <div class="section-header">
+                <h2 class="section-title">热门分类</h2>
+            </div>
+            <div class="grid-4">
+                <a href="#" class="card" style="text-align: center; padding: 30px 0;">
+                    <div style="font-size: 40px; margin-bottom: 10px;">🌸</div>
+                    <h3 style="font-size: 16px; color: var(--text-main);">甜美日系</h3>
+                </a>
+                <a href="#" class="card" style="text-align: center; padding: 30px 0;">
+                    <div style="font-size: 40px; margin-bottom: 10px;">🧥</div>
+                    <h3 style="font-size: 16px; color: var(--text-main);">极简高级</h3>
+                </a>
+                <a href="#" class="card" style="text-align: center; padding: 30px 0;">
+                    <div style="font-size: 40px; margin-bottom: 10px;">🎸</div>
+                    <h3 style="font-size: 16px; color: var(--text-main);">街头潮酷</h3>
+                </a>
+                <a href="#" class="card" style="text-align: center; padding: 30px 0;">
+                    <div style="font-size: 40px; margin-bottom: 10px;">👘</div>
+                    <h3 style="font-size: 16px; color: var(--text-main);">国风古韵</h3>
+                </a>
+            </div>
+        </section>
+
+        <section class="container">
+            <div class="section-header">
+                <h2 class="section-title">搭配小贴士</h2>
+            </div>
+            <div class="guide-list">
+                <div class="guide-item">
+                    <div class="guide-icon">1</div>
+                    <div class="guide-text">
+                        <h4>确定风格基调</h4>
+                        <p>情侣装不一定非要完全一样，可以选择同色系、同材质或同元素（如条纹、波点）进行呼应，避免硬套同款。</p>
+                    </div>
+                </div>
+                <div class="guide-item">
+                    <div class="guide-icon">2</div>
+                    <div class="guide-text">
+                        <h4>注重舒适度</h4>
+                        <p>好看的图片是展示出来的，但日常穿着舒适才是关键。选择透气、柔软的面料，让穿搭服务于生活。</p>
+                    </div>
+                </div>
+                <div class="guide-item">
+                    <div class="guide-icon">3</div>
+                    <div class="guide-text">
+                        <h4>扬长避短</h4>
+                        <p>了解彼此的身材优势，选择能突显身材特点的款式。例如高个子适合长款外套，小个子适合短款上衣。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h2>情侣穿搭图鉴</h2>
+                    <p>汇集全网好看的情侣装图片与搭配灵感，致力于为每一对情侣提供时尚、实用的穿搭参考，记录生活中的每一个甜蜜瞬间。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>浏览分类</h4>
+                    <ul>
+                        <li><a href="#">甜美风格</a></li>
+                        <li><a href="#">休闲运动</a></li>
+                        <li><a href="#">商务正装</a></li>
+                        <li><a href="#">度假出游</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>帮助中心</h4>
+                    <ul>
+                        <li><a href="#">投稿指南</a></li>
+                        <li><a href="#">关于我们</a></li>
+                        <li><a href="#">联系合作</a></li>
+                        <li><a href="#">用户协议</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>关注我们</h4>
+                    <ul>
+                        <li><a href="#">微信公众号</a></li>
+                        <li><a href="#">小红书</a></li>
+                        <li><a href="#">微博</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2023 情侣穿搭图鉴. All Rights Reserved. 本站图片资源仅供学习交流，版权归原作者所有.
+            </div>
+        </div>
+    </footer>
+
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</body>
+  </html>

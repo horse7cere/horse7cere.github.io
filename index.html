@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="贵族幼儿园官网，提供高端幼儿教育服务、国际双语课程、精英师资团队及个性化成长规划。关注幼儿早期发展与贵族精神培养。">
+    <meta name="keywords" content="贵族幼儿园,高端幼儿园,国际幼儿园,双语教育,精英教育,幼儿成长">
+    <title>贵族幼儿园-高端国际幼儿教育与精英成长平台</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #1e3a5f;
+            --secondary-color: #d4af37;
+            --accent-color: #f4f7f6;
+            --text-dark: #333333;
+            --text-light: #666666;
+            --white: #ffffff;
+            --border-radius: 8px;
+            --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: #fafafa;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--secondary-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--text-dark);
+            transition: var(--transition);
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--secondary-color);
+        }
+
+        .cta-btn {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 10px 24px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .cta-btn:hover {
+            background-color: var(--secondary-color);
+            color: var(--white);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #2c5282 100%);
+            color: var(--white);
+            padding: 100px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23ffffff" fill-opacity="0.05"%3E%3Cpath d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--white);
+            color: var(--white);
+            padding: 10px 24px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .btn-outline:hover {
+            background: var(--white);
+            color: var(--primary-color);
+        }
+
+        /* Features Section */
+        .features {
+            padding: 80px 0;
+            background-color: var(--white);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: 32px;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .section-header p {
+            color: var(--text-light);
+            font-size: 16px;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            padding: 40px 30px;
+            background: var(--accent-color);
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+            text-align: center;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow);
+        }
+
+        .feature-icon {
+            font-size: 40px;
+            margin-bottom: 20px;
+            color: var(--secondary-color);
+        }
+
+        .feature-card h3 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        .feature-card p {
+            color: var(--text-light);
+            font-size: 15px;
+        }
+
+        /* Curriculum Section */
+        .curriculum {
+            padding: 80px 0;
+            background-color: #f4f7f6;
+        }
+
+        .curriculum-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .curriculum-content h2 {
+            font-size: 32px;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .curriculum-content p {
+            color: var(--text-light);
+            margin-bottom: 30px;
+        }
+
+        .curriculum-list li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .curriculum-list li::before {
+            content: '✓';
+            color: var(--secondary-color);
+            font-weight: bold;
+        }
+
+        .curriculum-image {
+            background-color: var(--white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ccc;
+            font-size: 14px;
+            position: relative;
+        }
+        
+        .curriculum-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Gallery Section */
+        .gallery {
+            padding: 80px 0;
+            background-color: var(--white);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(2, 200px);
+            gap: 15px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: var(--border-radius);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-item:nth-child(1) {
+            grid-column: span 2;
+            grid-row: span 2;
+        }
+
+        /* Stats Section */
+        .stats {
+            background-color: var(--secondary-color);
+            padding: 60px 0;
+            color: var(--white);
+        }
+
+        .stats-grid {
+            display: flex;
+            justify-content: space-around;
+            text-align: center;
+        }
+
+        .stat-item h3 {
+            font-size: 36px;
+            margin-bottom: 5px;
+        }
+
+        .stat-item p {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        /* Contact/Admission Section */
+        .admission {
+            padding: 80px 0;
+            background-color: var(--white);
+        }
+
+        .admission-container {
+            display: flex;
+            gap: 50px;
+            background-color: var(--primary-color);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .admission-info {
+            flex: 1;
+            padding: 50px;
+            color: var(--white);
+        }
+
+        .admission-info h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .info-list li {
+            margin-bottom: 20px;
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+        .info-list li strong {
+            min-width: 80px;
+            display: block;
+            margin-top: 2px;
+        }
+
+        .admission-form {
+            flex: 1;
+            padding: 50px;
+            background-color: var(--white);
+            color: var(--text-dark);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            font-size: 14px;
+        }
+
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: inherit;
+        }
+
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1a1a1a;
+            color: #999;
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: var(--white);
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--secondary-color);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+            font-size: 14px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-wrapper {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+            }
+
+            nav ul {
+                margin: 15px 0;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .curriculum-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: auto;
+            }
+
+            .gallery-item:nth-child(1) {
+                grid-column: span 2;
+                height: 250px;
+            }
+
+            .admission-container {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <div class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+                贵族<span>幼儿园</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home" class="active">首页</a></li>
+                    <li><a href="#curriculum">课程体系</a></li>
+                    <li><a href="#gallery">校园环境</a></li>
+                    <li><a href="#faculty">师资团队</a></li>
+                    <li><a href="#admission">入学申请</a></li>
+                </ul>
+            </nav>
+            <a href="#admission" class="cta-btn">预约参观</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="container hero-content">
+                <h1>开启精英教育的未来</h1>
+                <p>致力于为2-6岁幼儿提供国际化双语环境与贵族式精英教育，培养具有全球视野与领袖气质的未来人才。</p>
+                <div class="hero-buttons">
+                    <a href="#curriculum" class="cta-btn">了解课程</a>
+                    <a href="#admission" class="btn-outline">在线报名</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features">
+            <div class="container">
+                <div class="section-header">
+                    <h2>为什么选择贵族幼儿园</h2>
+                    <p>融合西方先进教育理念与中国传统文化精髓，打造全方位的成长平台</p>
+                </div>
+                <div class="feature-grid">
+                    <article class="feature-card">
+                        <div class="feature-icon">🌍</div>
+                        <h3>国际双语环境</h3>
+                        <p>全英文浸润式教学与中文核心课程相结合，营造纯正的国际化语言氛围。</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon">🧠</div>
+                        <h3>精英师资团队</h3>
+                        <p>100%本科及以上学历，持有国际教师资格证，具备多年高端教育管理经验。</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon">🏰</div>
+                        <h3>贵族式硬件设施</h3>
+                        <p>配备恒温泳池、室内高尔夫练习场、STEAM创客实验室及全景落地窗教室。</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Curriculum Section -->
+        <section id="curriculum" class="curriculum">
+            <div class="container">
+                <div class="curriculum-grid">
+                    <div class="curriculum-content">
+                        <h2>定制化成长课程</h2>
+                        <p>我们摒弃传统的填鸭式教育，采用“PBL项目制学习”与“蒙台梭利教学法”相结合，尊重每个孩子的个性化发展节奏。</p>
+                        <ul class="curriculum-list">
+                            <li><strong>启蒙探索课程：</strong>培养感官与逻辑思维，激发好奇心。</li>
+                            <li><strong>双语艺术课程：</strong>涵盖绘画、音乐、戏剧，提升审美与表达能力。</li>
+                            <li><strong>体育竞技课程：</strong>高尔夫、网球、游泳，塑造强健体魄与规则意识。</li>
+                            <li><strong>领导力工作坊：</strong>通过团队协作游戏，培养沟通与领导能力。</li>
+                        </ul>
+                    </div>
+                    <div class="curriculum-image">
+                        <img src="https://picsum.photos/seed/school1/600/400" alt="幼儿课堂互动">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="stats">
+            <div class="container stats-grid">
+                <div class="stat-item">
+                    <h3>15+</h3>
+                    <p>国际化教学经验</p>
+                </div>
+                <div class="stat-item">
+                    <h3>100%</h3>
+                    <p>本科及以上学历</p>
+                </div>
+                <div class="stat-item">
+                    <h3>1:4</h3>
+                    <p>师生配比</p>
+                </div>
+                <div class="stat-item">
+                    <h3>50+</h3>
+                    <p>高端设施设备</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section id="gallery" class="gallery">
+            <div class="container">
+                <div class="section-header">
+                    <h2>校园生活掠影</h2>
+                </div>
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <img src="https://picsum.photos/seed/kid1/800/800" alt="大型户外活动">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://picsum.photos/seed/kid2/400/400" alt="艺术创作">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://picsum.photos/seed/kid3/400/400" alt="阅读时光">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://picsum.photos/seed/kid4/400/400" alt="户外探索">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://picsum.photos/seed/kid5/400/400" alt="国际交流">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Admission Section -->
+        <section id="admission" class="admission">
+            <div class="container">
+                <div class="admission-container">
+                    <div class="admission-info">
+                        <h2>入学咨询与参观</h2>
+                        <p style="margin-bottom: 30px; opacity: 0.9;">我们诚挚邀请您莅临园区参观，深入了解我们的教育理念与培养体系。招生名额有限，请提前预约。</p>
+                        <ul class="info-list">
+                            <li>
+                                <strong>咨询热线：</strong>
+                                <span>400-888-6666</span>
+                            </li>
+                            <li>
+                                <strong>校区地址：</strong>
+                                <span>北京市朝阳区CBD国际教育园88号</span>
+                            </li>
+                            <li>
+                                <strong>开放时间：</strong>
+                                <span>周一至周五 9:00 - 16:30</span>
+                            </li>
+                            <li>
+                                <strong>招生对象：</strong>
+                                <span>2-6岁适龄儿童</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="admission-form">
+                        <form onsubmit="event.preventDefault(); alert('感谢您的提交，我们的招生顾问将在24小时内与您联系。');">
+                            <div class="form-group">
+                                <label for="name">家长姓名</label>
+                                <input type="text" id="name" placeholder="请输入您的姓名" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">联系电话</label>
+                                <input type="tel" id="phone" placeholder="请输入联系电话" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="child-age">孩子年龄</label>
+                                <select id="child-age">
+                                    <option value="">请选择年龄段</option>
+                                    <option value="2">2-3岁</option>
+                                    <option value="3">3-4岁</option>
+                                    <option value="4">4-5岁</option>
+                                    <option value="5">5-6岁</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="cta-btn" style="width: 100%; border: none;">提交申请</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>关于我们</h4>
+                    <p style="font-size: 14px; line-height: 1.8;">贵族幼儿园致力于为家庭提供最高品质的幼儿教育服务，培养具有全球视野、独立思考能力和领导力的未来精英。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="#home">回到首页</a></li>
+                        <li><a href="#curriculum">课程体系</a></li>
+                        <li><a href="#admission">招生简章</a></li>
+                        <li><a href="#">家长社区</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系方式</h4>
+                    <ul>
+                        <li>电话：400-888-6666</li>
+                        <li>邮箱：admissions@noble-kids.com</li>
+                        <li>地址：北京市朝阳区CBD国际教育园</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 贵族幼儿园 版权所有 | 京ICP备12345678号</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

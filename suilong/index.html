@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="碎龙 - 怪物猎人系列核心怪物图鉴与战斗攻略。包含碎龙生态习性、弱点部位分析、肉质数据、常用武器连招技巧及狩猎装备搭配推荐。">
+    <meta name="keywords" content="碎龙, 怪物猎人, 怪物图鉴, 碎龙攻略, 碎龙肉质, 怪物猎人世界, 怪物猎人崛起, 碎龙肉质表">
+    <title>碎龙-怪物猎人核心怪物图鉴与战斗指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #8B4513;
+            --secondary-color: #D2691E;
+            --accent-color: #CD853F;
+            --bg-color: #F5F2EB;
+            --text-color: #2C2C2C;
+            --card-bg: #FFFFFF;
+            --border-color: #E0E0E0;
+            --danger-color: #E74C3C;
+            --success-color: #27AE60;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header */
+        header {
+            background-color: #1a1a1a;
+            color: #fff;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--secondary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: #fff;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a:hover {
+            color: var(--secondary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://picsum.photos/seed/monster/1920/600') no-repeat center center/cover;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+            margin-bottom: 2rem;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        /* Main Content */
+        main {
+            flex: 1;
+            padding-bottom: 3rem;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            border-left: 5px solid var(--secondary-color);
+            padding-left: 15px;
+            color: #333;
+        }
+
+        /* Info Grid */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 3rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            border: 1px solid var(--border-color);
+        }
+
+        .card h3 {
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        .card p {
+            font-size: 0.95rem;
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 4px 8px;
+            background: #eee;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            margin-right: 5px;
+            margin-bottom: 5px;
+        }
+
+        .tag.danger { background: #fadbd8; color: #c0392b; }
+        .tag.success { background: #d5f5e3; color: #27ae60; }
+        .tag.warning { background: #fcf3cf; color: #f39c12; }
+
+        /* Weakness Table */
+        .weakness-section {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            margin-bottom: 3rem;
+        }
+
+        .weakness-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        .weakness-table th, .weakness-table td {
+            border: 1px solid var(--border-color);
+            padding: 12px;
+            text-align: center;
+        }
+
+        .weakness-table th {
+            background-color: #f8f9fa;
+            color: #333;
+        }
+
+        .damage-level {
+            display: inline-block;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            margin-right: 5px;
+        }
+        .level-high { background-color: var(--danger-color); }
+        .level-med { background-color: var(--accent-color); }
+        .level-low { background-color: var(--success-color); }
+
+        /* Strategy Section */
+        .strategy-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 3rem;
+        }
+
+        .strategy-item {
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .strategy-item h3 {
+            margin-bottom: 15px;
+            color: var(--secondary-color);
+            display: flex;
+            align-items: center;
+        }
+
+        .strategy-item h3::before {
+            content: '⚔️';
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+
+        /* Equipment */
+        .equip-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .equip-item {
+            background: #f9f9f9;
+            padding: 10px 15px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            font-size: 0.9rem;
+        }
+
+        /* FAQ */
+        .faq-item {
+            border-bottom: 1px solid var(--border-color);
+            padding: 15px 0;
+        }
+        .faq-question {
+            font-weight: bold;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+        }
+        .faq-answer {
+            margin-top: 10px;
+            color: #666;
+            display: none;
+        }
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+        .faq-item.active .faq-question::after {
+            content: '▼';
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1a1a1a;
+            color: #999;
+            padding: 2rem 0;
+            text-align: center;
+            margin-top: auto;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .nav-wrapper { flex-direction: column; gap: 10px; }
+            nav ul { font-size: 0.9rem; }
+            .strategy-grid { grid-template-columns: 1fr; }
+            .weakness-table { font-size: 0.9rem; }
+            .weakness-table th, .weakness-table td { padding: 8px; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container nav-wrapper">
+        <div class="logo">MH<span>Wiki</span></div>
+        <nav>
+            <ul>
+                <li><a href="#">首页</a></li>
+                <li><a href="#">怪物图鉴</a></li>
+                <li><a href="#">武器推荐</a></li>
+                <li><a href="#">防具搭配</a></li>
+                <li><a href="#">社区讨论</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<section class="hero">
+    <div class="container">
+        <h1>碎龙</h1>
+        <p>具有强大破坏力与高防御力的古龙，其独特的“剥落”机制与狂暴状态是狩猎的核心难点。</p>
+    </div>
+</section>
+
+<main class="container">
+    <!-- Basic Info -->
+    <section>
+        <h2 class="section-title">怪物基础信息</h2>
+        <div class="info-grid">
+            <div class="card">
+                <h3>生态习性</h3>
+                <p><strong>栖息地：</strong>古代树森林、陆桥、大蚁冢荒地等。</p>
+                <p><strong>食物链：</strong>处于食物链顶端，几乎没有天敌。</p>
+                <p><strong>特征：</strong>全身覆盖着厚重且不断剥落的角质层，拥有巨大的前爪，攻击范围极广。</p>
+            </div>
+            <div class="card">
+                <h3>狩猎难度</h3>
+                <p><strong>评级：</strong>★★★★☆ (G级任务中极具挑战性)</p>
+                <p><strong>主要威胁：</strong>高防御力、狂暴后的多重攻击、粉尘攻击。</p>
+                <p><strong>推荐武器：</strong>大剑、锤子、太刀（高机动性或高爆发）。</p>
+            </div>
+            <div class="card">
+                <h3>核心机制：剥落</h3>
+                <p>碎龙在受到一定伤害后，身上的角质层会剥落，暴露出红色的肌肉组织。</p>
+                <p><strong>状态变化：</strong>剥落后防御力大幅下降，但会进入“狂暴状态”，攻击频率和速度显著提升。</p>
+                <p><strong>对策：</strong>在剥落前集中输出，或在剥落后利用高会心武器迅速击杀。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Weakness Table -->
+    <section class="weakness-section">
+        <h2 class="section-title">弱点部位与属性</h2>
+        <p>针对不同部位进行针对性攻击是高效狩猎的关键。</p>
+        <table class="weakness-table">
+            <thead>
+                <tr>
+                    <th>部位</th>
+                    <th>火</th>
+                    <th>水</th>
+                    <th>雷</th>
+                    <th>冰</th>
+                    <th>龙</th>
+                    <th>斩击</th>
+                    <th>打击</th>
+                    <th>射击</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>头部</strong></td>
+                    <td><span class="damage-level level-high"></span></td>
+                    <td><span class="damage-level level-low"></span></td>
+                    <td><span class="damage-level level-med"></span></td>
+                    <td><span class="damage-level level-med"></span></td>
+                    <td><span class="damage-level level-med"></span></td>
+                    <td><span class="damage-level level-high"></span></td>
+                    <td><span class="damage-level level-high"></span></td>
+                    <td><span class="damage-level level-low"></span></td>
+                </tr>
+                <tr>
+                    <td><strong>前爪</strong></td>
+                    <td><span class="damage-level level-high"></span></td>
+                    <td><span class="damage-level level-low"></span></td>
+                    <td><span class="damage-level level-med"></span></td>
+                    <td><span class="damage-level level-med"></span></td>
+                    <td><span class="damage-level level-med"></span></td>
+                    <td><span class="damage-level level-high"></span></td>
+                    <td><span class="damage-level level-high"></span></td>
+                    <td><span class="damage-level level-low"></span></td>
+                </tr>
+                <tr>
+                    <td><strong>尾部</strong></td>
+                    <td><span class="damage-level level-high"></span></td>
+                    <td><span class="damage-level level-low"></span></td>
+                    <td><span class="damage-level level-med"></span></td>
+                    <td><span class="damage-level level-med"></span></td>
+                    <td><span class="damage-level level-med"></span></td>
+                    <td><span class="damage-level level-high"></span></td>
+                    <td><span class="damage-level level-high"></span></td>
+                    <td><span class="damage-level level-low"></span></td>
+                </tr>
+                <tr>
+                    <td><strong>前脚</strong></td>
+                    <td><span class="damage-level level-high"></span></td>
+                    <td><span class="damage-level level-low"></span></td>
+                    <td><span class="damage-level level-med"></span></td>
+                    <td><span class="damage-level level-med"></span></td>
+                    <td><span class="damage-level level-med"></span></td>
+                    <td><span class="damage-level level-high"></span></td>
+                    <td><span class="damage-level level-high"></span></td>
+                    <td><span class="damage-level level-low"></span></td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- Strategy -->
+    <section>
+        <h2 class="section-title">战斗策略指南</h2>
+        <div class="strategy-grid">
+            <div class="strategy-item">
+                <h3>狂暴状态应对</h3>
+                <p>当碎龙剥落后进入狂暴状态，它会大幅增加爪击的频率，并释放大范围的粉尘攻击。此时应立即远离其正面，寻找掩体（如树木或岩石）躲避粉尘，并寻找机会进行断尾或攻击腿部。</p>
+            </div>
+            <div class="strategy-item">
+                <h3>断尾技巧</h3>
+                <p>碎龙的尾巴具有极高的防御力和斩击耐久度。建议使用<strong>大剑</strong>的蓄力斩或<strong>片手剑</strong>的滑步攻击来集中破防。断尾后可以获取高品质的素材用于制作武器。</p>
+            </div>
+            <div class="strategy-item">
+                <h3>肉质与部位破坏</h3>
+                <p>优先攻击前爪和头部。在战斗初期，通过攻击其前爪使其倒地，是输出伤害的最佳窗口期。利用飞扑、突刺等动作保持机动性，避免被其横扫攻击击中。</p>
+            </div>
+            <div class="strategy-item">
+                <h3>装备推荐</h3>
+                <div class="equip-list">
+                    <span class="equip-item">黑龙套 (G级)</span>
+                    <span class="equip-item">崩龙套 (MHW)</span>
+                    <span class="equip-item">熔山龙防具</span>
+                    <span class="equip-item">属性攻击珠</span>
+                    <span class="equip-item">弱特珠 (攻击力强化)</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="card" style="margin-bottom: 2rem;">
+        <h2 class="section-title">常见问题 (FAQ)</h2>
+        <div class="faq-item">
+            <div class="faq-question">碎龙的粉尘攻击怎么躲？</div>
+            <div class="faq-answer">碎龙释放粉尘时，身体会先向后仰蓄力，随后向前方喷出大量粉尘。此时应立即向侧后方翻滚，或寻找高处的掩体，不要试图硬抗。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">剥落后怎么判断它要狂暴？</div>
+            <div class="faq-answer">剥落后碎龙会发出低沉的吼声，全身发红，攻击欲望极强。此时它的爪击范围会变大，且连招更加密集。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">新手用什么武器打碎龙比较稳？</div>
+            <div class="faq-answer">推荐使用<strong>轻弩</strong>或<strong>重弩</strong>。远程武器可以在保持安全距离的同时，持续输出头部和腿部，避免近战被其狂暴后的连续攻击击中。</div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="container">
+        <p>&copy; 2023 怪物猎人Wiki - 碎龙专题页. 本站为玩家攻略整理，非官方页面。</p>
+        <p style="font-size: 0.8rem; margin-top: 10px;">《怪物猎人》系列为Capcom注册商标。</p>
+    </div>
+</footer>
+
+<script>
+    // Simple FAQ Toggle Logic
+    document.querySelectorAll('.faq-question').forEach(item => {
+        item.addEventListener('click', event => {
+            const parent = item.parentElement;
+            parent.classList.toggle('active');
+        });
+    });
+</script>
+
+</body>
+</html>

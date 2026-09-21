@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="韩立平个人官方网站。韩立平是一位专注于人工智能与大数据分析领域的资深专家，致力于推动技术创新与产业应用。本站提供关于韩立平的专业背景、研究成果、行业观点及最新动态的权威信息。">
+    <meta name="keywords" content="韩立平, 人工智能, 大数据分析, 专家, 研究成果, 技术创新">
+    <title>韩立平-人工智能与大数据分析专家研究机构</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --primary-dark: #1e40af;
+            --secondary-color: #0f172a;
+            --text-main: #334155;
+            --text-light: #64748b;
+            --bg-light: #f8fafc;
+            --bg-white: #ffffff;
+            --border-color: #e2e8f0;
+            --radius-md: 8px;
+            --radius-lg: 12px;
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --container-width: 1200px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            color: var(--text-main);
+            background-color: var(--bg-light);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Layout Utilities */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section {
+            padding: 60px 0;
+        }
+
+        .grid {
+            display: grid;
+            gap: 24px;
+        }
+
+        .grid-2 {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .grid-3 {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        @media (max-width: 768px) {
+            .grid-2, .grid-3 {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Header */
+        header {
+            background-color: var(--bg-white);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            color: var(--primary-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 32px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-main);
+            font-size: 0.95rem;
+        }
+
+        nav a:hover {
+            color: var(--primary-color);
+        }
+
+        .btn-cta {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 8px 20px;
+            border-radius: var(--radius-md);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .btn-cta:hover {
+            background-color: var(--primary-dark);
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            nav { display: none; }
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #eff6ff 0%, #ffffff 100%);
+            padding: 80px 0 100px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 16px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.125rem;
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto 32px;
+        }
+
+        .hero-tags {
+            display: inline-flex;
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+
+        .tag {
+            background: rgba(37, 99, 235, 0.1);
+            color: var(--primary-color);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .hero-actions {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+        }
+
+        /* About Section */
+        .about-content {
+            background: var(--bg-white);
+            border-radius: var(--radius-lg);
+            padding: 40px;
+            box-shadow: var(--shadow-sm);
+            display: flex;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .profile-img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            flex-shrink: 0;
+            border: 4px solid var(--bg-light);
+        }
+
+        .profile-info h2 {
+            font-size: 1.75rem;
+            margin-bottom: 16px;
+            color: var(--secondary-color);
+        }
+
+        .profile-info p {
+            color: var(--text-light);
+            margin-bottom: 20px;
+        }
+
+        .stats {
+            display: flex;
+            gap: 40px;
+            margin-top: 24px;
+            padding-top: 24px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .stat-item h3 {
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+        }
+
+        .stat-item p {
+            font-size: 0.875rem;
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            .about-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            .profile-img {
+                margin: 0 auto;
+            }
+            .stats {
+                justify-content: center;
+            }
+        }
+
+        /* Research Areas */
+        .research-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
+
+        .card {
+            background: var(--bg-white);
+            padding: 24px;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border-color);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .card-icon {
+            width: 48px;
+            height: 48px;
+            background: #eff6ff;
+            color: var(--primary-color);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 16px;
+        }
+
+        .card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 12px;
+            color: var(--secondary-color);
+        }
+
+        .card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Publications */
+        .pub-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .pub-item {
+            background: var(--bg-white);
+            padding: 24px;
+            border-radius: var(--radius-md);
+            border-left: 4px solid var(--primary-color);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .pub-meta {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            margin-bottom: 8px;
+            display: flex;
+            gap: 16px;
+        }
+
+        .pub-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--secondary-color);
+            margin-bottom: 8px;
+        }
+
+        .pub-desc {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Contact & Footer */
+        footer {
+            background-color: var(--secondary-color);
+            color: #94a3b8;
+            padding: 60px 0 20px;
+            margin-top: 60px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand h3 {
+            color: white;
+            font-size: 1.5rem;
+            margin-bottom: 16px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            font-size: 1rem;
+            margin-bottom: 20px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-col a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #334155;
+            font-size: 0.875rem;
+        }
+
+        @media (max-width: 768px) {
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">韩立<span>平</span>智库</a>
+            <nav>
+                <ul>
+                    <li><a href="#about">个人简介</a></li>
+                    <li><a href="#research">研究方向</a></li>
+                    <li><a href="#publications">学术成果</a></li>
+                    <li><a href="#contact">联系合作</a></li>
+                </ul>
+            </nav>
+            <a href="#contact" class="btn-cta">预约咨询</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-tags">
+                    <span class="tag">人工智能专家</span>
+                    <span class="tag">数据科学家</span>
+                    <span class="tag">技术顾问</span>
+                </div>
+                <h1>探索数据驱动未来的无限可能</h1>
+                <p>致力于将前沿算法转化为实际生产力。在机器学习、自然语言处理及大数据架构领域深耕多年，为行业提供高价值的解决方案。</p>
+                <div class="hero-actions">
+                    <a href="#publications" class="btn-cta" style="background-color: var(--secondary-color);">查看论文</a>
+                    <a href="#research" class="btn-cta" style="background-color: transparent; border: 1px solid var(--primary-color); color: var(--primary-color);">了解研究</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section">
+            <div class="container">
+                <div class="about-content">
+                    <img src="https://picsum.photos/seed/hanliping/400/400" alt="韩立平肖像" class="profile-img">
+                    <div class="profile-info">
+                        <h2>关于韩立平</h2>
+                        <p>韩立平是一位在人工智能与商业智能领域具有广泛影响力的技术专家。拥有计算机科学博士学位，曾在全球知名科技企业担任首席架构师，目前专注于企业级大数据平台的建设与优化。</p>
+                        <p>他的核心使命是通过技术创新，帮助企业在复杂的数据环境中挖掘商业价值，实现数字化转型的跨越式发展。</p>
+                        
+                        <div class="stats">
+                            <div class="stat-item">
+                                <h3>15+</h3>
+                                <p>行业从业年限</p>
+                            </div>
+                            <div class="stat-item">
+                                <h3>50+</h3>
+                                <p>技术专利</p>
+                            </div>
+                            <div class="stat-item">
+                                <h3>20+</h3>
+                                <p>发表核心论文</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Research Areas -->
+        <section id="research" class="section" style="background-color: #f1f5f9;">
+            <div class="container">
+                <div style="text-align: center; margin-bottom: 40px;">
+                    <h2 style="font-size: 2rem; color: var(--secondary-color); margin-bottom: 12px;">核心研究方向</h2>
+                    <p style="color: var(--text-light);">通过跨学科的技术融合，解决实际业务中的复杂挑战</p>
+                </div>
+                <div class="research-grid">
+                    <article class="card">
+                        <div class="card-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5"></path><path d="M8.5 8.5v.01"></path><path d="M16 15.5v.01"></path><path d="M12 12v.01"></path></svg>
+                        </div>
+                        <h3>深度学习与神经网络</h3>
+                        <p>探索卷积神经网络（CNN）与Transformer架构在视觉识别与文本生成中的最新应用，优化模型效率。</p>
+                    </article>
+                    <article class="card">
+                        <div class="card-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+                        </div>
+                        <h3>大数据架构设计</h3>
+                        <p>设计高可用、高并发的数据中台架构，处理PB级数据，确保数据流转的实时性与准确性。</p>
+                    </article>
+                    <article class="card">
+                        <div class="card-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+                        </div>
+                        <h3>AI 赋能行业应用</h3>
+                        <p>将AI技术落地于金融风控、智慧医疗与智能制造场景，通过定制化模型提升业务决策能力。</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Publications -->
+        <section id="publications" class="section">
+            <div class="container">
+                <div style="display: flex; justify-content: space-between; align-items: end; margin-bottom: 32px;">
+                    <div>
+                        <h2 style="font-size: 2rem; color: var(--secondary-color);">学术成果与著作</h2>
+                        <p style="color: var(--text-light);">近期发表的核心论文与行业白皮书</p>
+                    </div>
+                    <a href="#" style="color: var(--primary-color); font-weight: 500;">查看全部 &rarr;</a>
+                </div>
+                
+                <div class="pub-list">
+                    <article class="pub-item">
+                        <div class="pub-meta">
+                            <span>2023年10月</span>
+                            <span>计算机科学学报</span>
+                        </div>
+                        <h3 class="pub-title">基于分布式深度学习的海量数据处理技术研究</h3>
+                        <p class="pub-desc">针对超大规模数据集的分布式训练瓶颈问题，提出了一种新的并行优化策略，显著降低了训练时间。</p>
+                    </article>
+                    <article class="pub-item">
+                        <div class="pub-meta">
+                            <span>2023年05月</span>
+                            <span>人工智能应用白皮书</span>
+                        </div>
+                        <h3 class="pub-title">企业级生成式AI的安全合规与伦理框架</h3>
+                        <p class="pub-desc">深入探讨了在金融和政务领域部署大语言模型时的数据隐私保护与模型可解释性挑战。</p>
+                    </article>
+                    <article class="pub-item">
+                        <div class="pub-meta">
+                            <span>2022年12月</span>
+                            <span>IEEE Transactions</span>
+                        </div>
+                        <h3 class="pub-title">多模态数据融合在精准推荐系统中的应用</h3>
+                        <p class="pub-desc">结合用户行为数据与外部知识图谱，构建了更精准的推荐算法模型，提升了转化率。</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section" style="background-color: var(--secondary-color); color: white;">
+            <div class="container">
+                <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+                    <h2 style="font-size: 2rem; margin-bottom: 16px;">合作与咨询</h2>
+                    <p style="color: #94a3b8; margin-bottom: 32px;">如果您有关于技术合作、演讲邀请或学术交流的需求，欢迎通过以下方式联系。</p>
+                    
+                    <div style="display: flex; justify-content: center; gap: 32px; flex-wrap: wrap;">
+                        <div>
+                            <p style="font-size: 0.875rem; color: #64748b; margin-bottom: 8px;">电子邮箱</p>
+                            <p style="font-size: 1.125rem; font-weight: 500;">contact@hanliping.org</p>
+                        </div>
+                        <div>
+                            <p style="font-size: 0.875rem; color: #64748b; margin-bottom: 8px;">办公地址</p>
+                            <p style="font-size: 1.125rem; font-weight: 500;">北京市海淀区中关村科技园</p>
+                        </div>
+                        <div>
+                            <p style="font-size: 0.875rem; color: #64748b; margin-bottom: 8px;">学术社交</p>
+                            <p style="font-size: 1.125rem; font-weight: 500;">LinkedIn / ResearchGate</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>韩立平智库</h3>
+                    <p style="font-size: 0.9rem; color: #64748b; line-height: 1.8;">
+                        致力于推动人工智能技术的普及与落地，为企业提供从战略规划到技术实施的全方位支持。连接数据与智慧，创造未来价值。
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="#about">个人简介</a></li>
+                        <li><a href="#research">研究方向</a></li>
+                        <li><a href="#publications">论文发表</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>资源支持</h4>
+                    <ul>
+                        <li><a href="#">开源项目</a></li>
+                        <li><a href="#">技术博客</a></li>
+                        <li><a href="#">讲座录像</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>法律信息</h4>
+                    <ul>
+                        <li><a href="#">隐私政策</a></li>
+                        <li><a href="#">使用条款</a></li>
+                        <li><a href="#">版权声明</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 韩立平个人官方网站 版权所有. 京ICP备XXXXXXXX号</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

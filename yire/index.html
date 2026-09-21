@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>yiren22.com - 个人展示与资源分享平台</title>
+    <meta name="description" content="yiren22.com 是一个专注于个人兴趣分享、技术文档整理及生活感悟记录的在线平台。提供实用教程、精选资源下载及互动交流空间。">
+    <meta name="keywords" content="yiren22.com,个人博客,资源分享,技术教程,生活记录">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --primary-hover: #1d4ed8;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-secondary: #64748b;
+            --border-color: #e2e8f0;
+            --radius-md: 8px;
+            --radius-lg: 12px;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
+            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1);
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Layout Utilities */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section {
+            padding: 60px 0;
+        }
+
+        .section-header {
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 10px;
+        }
+
+        .section-desc {
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--card-bg);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            letter-spacing: -0.5px;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-link {
+            font-weight: 500;
+            color: var(--text-main);
+            font-size: 1rem;
+        }
+
+        .nav-link:hover {
+            color: var(--primary-color);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #eff6ff 0%, #ffffff 100%);
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            color: var(--text-main);
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto 40px;
+        }
+
+        .cta-group {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            border-radius: var(--radius-md);
+            font-weight: 600;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+            box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-hover);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--border-color);
+            color: var(--text-main);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--text-main);
+        }
+
+        /* Features Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .feature-icon {
+            width: 50px;
+            height: 50px;
+            background-color: #eff6ff;
+            color: var(--primary-color);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        .feature-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 10px;
+        }
+
+        .feature-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* Content Grid (Blog/Articles) */
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .content-card {
+            background: var(--card-bg);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .content-image {
+            width: 100%;
+            height: 200px;
+            background-color: #e2e8f0;
+            object-fit: cover;
+        }
+
+        .content-body {
+            padding: 24px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .content-meta {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 10px;
+        }
+
+        .content-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+
+        .content-excerpt {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .read-more {
+            color: var(--primary-color);
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .read-more::after {
+            content: '→';
+            margin-left: 5px;
+            transition: transform 0.2s;
+        }
+
+        .read-more:hover::after {
+            transform: translateX(4px);
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            background-color: var(--card-bg);
+        }
+
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 40px;
+        }
+
+        .faq-item {
+            border-left: 3px solid var(--primary-color);
+            padding-left: 20px;
+        }
+
+        .faq-question {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--text-main);
+        }
+
+        .faq-answer {
+            color: var(--text-secondary);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #0f172a;
+            color: #94a3b8;
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand h2 {
+            color: white;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1rem;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #1e293b;
+            padding-top: 20px;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .nav-menu {
+                display: none; /* In a real app, implement JS toggle */
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .cta-group {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-container">
+            <a href="#" class="logo">yiren22.com</a>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="#" class="nav-link">首页</a></li>
+                    <li><a href="#features" class="nav-link">特色服务</a></li>
+                    <li><a href="#resources" class="nav-link">资源库</a></li>
+                    <li><a href="#about" class="nav-link">关于我们</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-menu-btn" aria-label="菜单">☰</button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1>探索 yiren22.com 的数字世界</h1>
+                <p>一个致力于分享实用工具、技术心得与生活美学的综合平台。无论您是寻找灵感、获取资源还是记录生活，这里都是您的理想起点。</p>
+                <div class="cta-group">
+                    <a href="#resources" class="btn btn-primary">浏览资源</a>
+                    <a href="#about" class="btn btn-outline">了解更多</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">核心特色</h2>
+                    <p class="section-desc">我们提供全方位的数字化服务，满足您在工作和生活中的不同需求。</p>
+                </div>
+                <div class="features-grid">
+                    <article class="feature-card">
+                        <div class="feature-icon">🚀</div>
+                        <h3>高效工具箱</h3>
+                        <p>精选各类实用在线工具，帮助您简化工作流程，提升日常效率，从文档处理到数据分析，一应俱全。</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon">📚</div>
+                        <h3>深度教程</h3>
+                        <p>由资深专家撰写的图文与视频教程，深入浅出地讲解各类技术难点与操作技巧，助您快速上手。</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon">💬</div>
+                        <h3>社区交流</h3>
+                        <p>活跃的用户社区，您可以在这里分享心得、提出疑问并结识志同道合的朋友，共同成长。</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Resources Section -->
+        <section id="resources" class="section" style="background-color: #f1f5f9;">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">精选资源</h2>
+                    <p class="section-desc">最新收录的高质量内容，分类清晰，方便您快速检索。</p>
+                </div>
+                <div class="content-grid">
+                    <article class="content-card">
+                        <img src="https://picsum.photos/seed/tech1/600/400" alt="科技主题配图" class="content-image" loading="lazy">
+                        <div class="content-body">
+                            <div class="content-meta">分类：技术 · 2023-10-24</div>
+                            <h3 class="content-title">Web开发中的性能优化技巧</h3>
+                            <p class="content-excerpt">本文详细介绍了提升网页加载速度的多种方法，包括代码压缩、图片懒加载以及浏览器缓存策略的实际应用。</p>
+                            <a href="#" class="read-more">阅读全文</a>
+                        </div>
+                    </article>
+                    <article class="content-card">
+                        <img src="https://picsum.photos/seed/design2/600/400" alt="设计主题配图" class="content-image" loading="lazy">
+                        <div class="content-body">
+                            <div class="content-meta">分类：设计 · 2023-10-22</div>
+                            <h3 class="content-title">极简主义设计在UI中的应用</h3>
+                            <p class="content-excerpt">探索如何通过留白、排版和色彩控制，创造出既美观又易用的用户界面，提升用户体验的沉浸感。</p>
+                            <a href="#" class="read-more">阅读全文</a>
+                        </div>
+                    </article>
+                    <article class="content-card">
+                        <img src="https://picsum.photos/seed/life3/600/400" alt="生活主题配图" class="content-image" loading="lazy">
+                        <div class="content-body">
+                            <div class="content-meta">分类：生活 · 2023-10-20</div>
+                            <h3 class="content-title">数字游民的远程工作指南</h3>
+                            <p class="content-excerpt">分享作为一名数字游民所需的设备清单、网络准备以及时间管理心得，帮助您开启自由职业之路。</p>
+                            <a href="#" class="read-more">阅读全文</a>
+                        </div>
+                    </article>
+                </div>
+                <div style="text-align: center; margin-top: 40px;">
+                    <a href="#" class="btn btn-outline">查看更多资源</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="about" class="section faq-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">常见问题</h2>
+                    <p class="section-desc">关于 yiren22.com 的使用与内容，您可能关心的解答。</p>
+                </div>
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <h3 class="faq-question">yiren22.com 是什么类型的网站？</h3>
+                        <p class="faq-answer">yiren22.com 是一个综合性的个人与社区驱动的网络平台，主要提供技术教程、实用工具下载以及生活相关的资讯分享。</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3 class="faq-question">如何获取最新的资源更新？</h3>
+                        <p class="faq-answer">您可以关注我们的社交媒体账号或订阅网站邮件列表，一旦有新资源发布，我们会第一时间通知您。</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3 class="faq-question">网站上的内容是否免费？</h3>
+                        <p class="faq-answer">大部分核心教程和基础工具资源是免费开放的，部分高级课程或特定资源可能需要会员权限。</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3 class="faq-question">我可以投稿或合作吗？</h3>
+                        <p class="faq-answer">欢迎有价值的投稿。请通过网站底部的联系邮箱与我们取得联系，我们将评估您的合作意向。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h2>yiren22.com</h2>
+                    <p>连接知识，分享价值。致力于为用户提供最优质的内容与服务体验。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速导航</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">首页</a></li>
+                        <li><a href="#">资源下载</a></li>
+                        <li><a href="#">服务条款</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>相关链接</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">帮助中心</a></li>
+                        <li><a href="#">社区论坛</a></li>
+                        <li><a href="#">关于我们</a></li>
+                        <li><a href="#">联系方式</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系方式</h4>
+                    <ul class="footer-links">
+                        <li>邮箱: contact@example.com</li>
+                        <li>地址: 网络空间 22号</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 yiren22.com. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
